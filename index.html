@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="de-DE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tênis de Graça da Nike - Quiz</title>
+    <title>Kostenlose Nike Sneaker - Quiz</title>
     <style>
         * {
             margin: 0;
@@ -30,6 +30,18 @@
             padding: 40px 30px;
             text-align: center;
             margin-bottom: 30px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .logo {
@@ -304,37 +316,19 @@
                 font-size: 18px;
             }
         }
-
-        .container {
-            animation: slideUp 0.8s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Logo Nike -->
         <div class="logo">
             <img src="https://valorecapital.com.br/wp-content/uploads/2025/06/logo-nike.webp" alt="Nike Logo" />
         </div>
         
-        <!-- Social Proof -->
         <div class="social-proof">
             <div class="live-indicator"></div>
-            <span class="social-proof-text" id="peopleCount">127 pessoas respondendo agora!</span>
+            <span class="social-proof-text" id="peopleCount">127 Personen antworten gerade!</span>
         </div>
         
-        <!-- Barra de Progresso com 95% -->
         <div class="progress-container">
             <div class="progress-bar">
                 <div class="progress-fill"></div>
@@ -342,20 +336,16 @@
             <div class="progress-percentage">95%</div>
         </div>
         
-        <!-- Urgência -->
-        <div class="urgency-text">Vagas Limitadas</div>
+        <div class="urgency-text">Begrenzte Plätze</div>
         
-        <!-- Título do Quiz -->
-        <h1 class="quiz-title">Pergunta 1 de 2</h1>
-        <p class="quiz-subtitle">VOCÊ GOSTARIA DE VER AS OPÇÕES PARA:</p>
+        <h1 class="quiz-title">Frage 1 von 2</h1>
+        <p class="quiz-subtitle">MÖCHTEN SIE DIE OPTIONEN SEHEN FÜR:</p>
         
-        <!-- Opções -->
         <div class="options-container">
-            <!-- Opção 1: HOMEM -->
-            <div class="option-card" data-option="homem" onclick="selectOption('homem')">
-                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/nike-air-force-1-masculino.webp');"></div>
+            <div class="option-card" data-option="mann" onclick="selectOption('mann')">
+                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/QuizVec3-Masculino.webp');"></div>
                 <div>
-                    <div class="gender-label">HOMEM</div>
+                    <div class="gender-label">MANN</div>
                     <div class="rating">
                         <div class="stars">
                             <span class="star">★</span>
@@ -369,11 +359,10 @@
                 </div>
             </div>
             
-            <!-- Opção 2: MULHER -->
-            <div class="option-card" data-option="mulher" onclick="selectOption('mulher')">
-                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/nike-air-jordan-fem.webp');"></div>
+            <div class="option-card" data-option="frau" onclick="selectOption('frau')">
+                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/QuizVec3-Feminino.webp');"></div>
                 <div>
-                    <div class="gender-label">MULHER</div>
+                    <div class="gender-label">FRAU</div>
                     <div class="rating">
                         <div class="stars">
                             <span class="star">★</span>
@@ -389,30 +378,27 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <div class="footer-links">
-            <a href="https://valorecapital.com.br/contato/">Contato</a>
-            <a href="https://valorecapital.com.br/politica-de-privacidade/">Política de Privacidade</a>
-            <a href="https://valorecapital.com.br/quem-somos/">Quem Somos</a>
-            <a href="https://valorecapital.com.br/termos-de-uso/">Termos de Uso</a>
+            <a href="https://valorecapital.com.br/contato/">Kontakt</a>
+            <a href="https://valorecapital.com.br/politica-de-privacidade/">Datenschutzrichtlinie</a>
+            <a href="https://valorecapital.com.br/quem-somos/">Über uns</a>
+            <a href="https://valorecapital.com.br/termos-de-uso/">Nutzungsbedingungen</a>
         </div>
-        <div>© 2025 Valor e Capital. Todos os direitos reservados.</div>
+        <div>© 2025 Valor e Capital. Alle Rechte vorbehalten.</div>
     </div>
 
     <script>
-        // Função para recuperar parâmetros UTM do localStorage (integração com script do header.php)
         function getUtmParamsFromStorage() {
             try {
                 const storedParams = localStorage.getItem('utm_params');
                 return storedParams ? JSON.parse(storedParams) : {};
             } catch (e) {
-                console.log('UTM Quiz: Erro ao recuperar parâmetros do localStorage:', e);
+                console.log('UTM Quiz: Error retrieving parameters from localStorage:', e);
                 return {};
             }
         }
 
-        // Função para obter parâmetros UTM da URL atual
         function getUtmParamsFromUrl() {
             const urlParams = new URLSearchParams(window.location.search);
             const utmParams = {};
@@ -428,69 +414,55 @@
             return utmParams;
         }
 
-        // Função para construir URL com parâmetros UTM + hash
         function buildUrlWithUtm(baseUrl, gender) {
-            // Primeiro tenta pegar da URL atual, depois do localStorage
             let utmParams = getUtmParamsFromUrl();
             
-            // Se não encontrou na URL atual, pega do localStorage
             if (Object.keys(utmParams).length === 0) {
                 utmParams = getUtmParamsFromStorage();
             }
             
-            // Constrói a URL base com UTM
             const url = new URL(baseUrl);
             
-            // Adiciona parâmetros UTM se existirem
             Object.keys(utmParams).forEach(key => {
                 if (utmParams[key]) {
                     url.searchParams.set(key, utmParams[key]);
                 }
             });
             
-            // Adiciona hash/fragment com gênero (invisível para ads)
             const finalUrl = url.toString() + '#' + gender;
             
-            console.log('UTM Quiz: URL final com hash:', finalUrl);
-            console.log('UTM Quiz: Gênero no hash:', gender);
-            console.log('UTM Quiz: Parâmetros UTM preservados:', utmParams);
+            console.log('UTM Quiz: Final URL with hash:', finalUrl);
+            console.log('UTM Quiz: Gender in hash:', gender);
+            console.log('UTM Quiz: UTM parameters preserved:', utmParams);
             
             return finalUrl;
         }
 
-        // Função para selecionar opção e redirecionar com UTM preservado + hash
         function selectOption(gender) {
-            // Adiciona efeito visual de seleção
             document.querySelectorAll('.option-card').forEach(card => {
                 card.classList.remove('selected');
             });
             
             document.querySelector(`[data-option="${gender}"]`).classList.add('selected');
             
-            // Pequeno delay para mostrar a seleção antes de redirecionar
             setTimeout(() => {
-                const baseUrl = 'https://valorecapital.com.br/app-rec03-nike-tenis/';
+                const baseUrl = 'https://valorecapital.com.br/de/app-rec03-nike-tenis/';
                 const finalUrl = buildUrlWithUtm(baseUrl, gender);
                 window.location.href = finalUrl;
             }, 300);
         }
         
-        // Animação do contador de pessoas
         function updatePeopleCount() {
             const countElement = document.getElementById('peopleCount');
             const baseCount = 120;
             const variation = Math.floor(Math.random() * 15) + 1;
             const currentCount = baseCount + variation;
-            countElement.textContent = `${currentCount} pessoas respondendo agora!`;
+            countElement.textContent = `${currentCount} Personen antworten gerade!`;
         }
         
-        // Atualiza contador a cada 3-7 segundos
         setInterval(updatePeopleCount, Math.random() * 4000 + 3000);
-        
-        // Inicializa contador
         updatePeopleCount();
         
-        // Adiciona efeito de hover nos cards
         document.querySelectorAll('.option-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 if (!this.classList.contains('selected')) {
@@ -505,9 +477,8 @@
             });
         });
 
-        // Log para debug - mostra os parâmetros UTM disponíveis
-        console.log('UTM Quiz: Parâmetros UTM na URL atual:', getUtmParamsFromUrl());
-        console.log('UTM Quiz: Parâmetros UTM no localStorage:', getUtmParamsFromStorage());
+        console.log('UTM Quiz: Current URL UTM parameters:', getUtmParamsFromUrl());
+        console.log('UTM Quiz: localStorage UTM parameters:', getUtmParamsFromStorage());
     </script>
 </body>
 </html>
