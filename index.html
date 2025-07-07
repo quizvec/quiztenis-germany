@@ -389,6 +389,12 @@
     </div>
 
     <script>
+        // Mapeamento de gêneros traduzidos para português (para compatibilidade com sistema original)
+        const genderMapping = {
+            'mann': 'homem',
+            'frau': 'mulher'
+        };
+
         function getUtmParamsFromStorage() {
             try {
                 const storedParams = localStorage.getItem('utm_params');
@@ -429,10 +435,13 @@
                 }
             });
             
-            const finalUrl = url.toString() + '#' + gender;
+            // Converte o gênero traduzido para português antes de adicionar ao hash
+            const portugueseGender = genderMapping[gender] || gender;
+            const finalUrl = url.toString() + '#' + portugueseGender;
             
             console.log('UTM Quiz: Final URL with hash:', finalUrl);
-            console.log('UTM Quiz: Gender in hash:', gender);
+            console.log('UTM Quiz: Original gender:', gender);
+            console.log('UTM Quiz: Portuguese gender in hash:', portugueseGender);
             console.log('UTM Quiz: UTM parameters preserved:', utmParams);
             
             return finalUrl;
@@ -479,6 +488,7 @@
 
         console.log('UTM Quiz: Current URL UTM parameters:', getUtmParamsFromUrl());
         console.log('UTM Quiz: localStorage UTM parameters:', getUtmParamsFromStorage());
+        console.log('UTM Quiz: Gender mapping:', genderMapping);
     </script>
 </body>
 </html>
