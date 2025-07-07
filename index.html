@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de-DE">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kostenlose Nike Sneaker - Quiz</title>
+    <title>Tênis de Graça da Nike - Quiz</title>
     <style>
         * {
             margin: 0;
@@ -331,7 +331,7 @@
         <!-- Social Proof -->
         <div class="social-proof">
             <div class="live-indicator"></div>
-            <span class="social-proof-text" id="peopleCount">127 Personen antworten gerade!</span>
+            <span class="social-proof-text" id="peopleCount">127 pessoas respondendo agora!</span>
         </div>
         
         <!-- Barra de Progresso com 95% -->
@@ -343,19 +343,19 @@
         </div>
         
         <!-- Urgência -->
-        <div class="urgency-text">Begrenzte Plätze</div>
+        <div class="urgency-text">Vagas Limitadas</div>
         
         <!-- Título do Quiz -->
-        <h1 class="quiz-title">Frage 1 von 2</h1>
-        <p class="quiz-subtitle">MÖCHTEN SIE DIE OPTIONEN SEHEN FÜR:</p>
+        <h1 class="quiz-title">Pergunta 1 de 2</h1>
+        <p class="quiz-subtitle">VOCÊ GOSTARIA DE VER AS OPÇÕES PARA:</p>
         
         <!-- Opções -->
         <div class="options-container">
             <!-- Opção 1: HOMEM -->
-            <div class="option-card" data-option="mann" onclick="selectOption('mann')">
-                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/QuizVec3-Masculino.webp');"></div>
+            <div class="option-card" data-option="homem" onclick="selectOption('homem')">
+                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/nike-air-force-1-masculino.webp');"></div>
                 <div>
-                    <div class="gender-label">MANN</div>
+                    <div class="gender-label">HOMEM</div>
                     <div class="rating">
                         <div class="stars">
                             <span class="star">★</span>
@@ -370,10 +370,10 @@
             </div>
             
             <!-- Opção 2: MULHER -->
-            <div class="option-card" data-option="frau" onclick="selectOption('frau')">
-                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/QuizVec3-Feminino.webp');"></div>
+            <div class="option-card" data-option="mulher" onclick="selectOption('mulher')">
+                <div class="option-image" style="background-image: url('https://valorecapital.com.br/wp-content/uploads/2025/07/nike-air-jordan-fem.webp');"></div>
                 <div>
-                    <div class="gender-label">FRAU</div>
+                    <div class="gender-label">MULHER</div>
                     <div class="rating">
                         <div class="stars">
                             <span class="star">★</span>
@@ -392,12 +392,12 @@
     <!-- Footer -->
     <div class="footer">
         <div class="footer-links">
-            <a href="https://valorecapital.com.br/contato/">Kontakt</a>
-            <a href="https://valorecapital.com.br/politica-de-privacidade/">Datenschutzrichtlinie</a>
-            <a href="https://valorecapital.com.br/quem-somos/">Über uns</a>
-            <a href="https://valorecapital.com.br/termos-de-uso/">Nutzungsbedingungen</a>
+            <a href="https://valorecapital.com.br/contato/">Contato</a>
+            <a href="https://valorecapital.com.br/politica-de-privacidade/">Política de Privacidade</a>
+            <a href="https://valorecapital.com.br/quem-somos/">Quem Somos</a>
+            <a href="https://valorecapital.com.br/termos-de-uso/">Termos de Uso</a>
         </div>
-        <div>© 2025 Valor e Capital. Alle Rechte vorbehalten.</div>
+        <div>© 2025 Valor e Capital. Todos os direitos reservados.</div>
     </div>
 
     <script>
@@ -469,7 +469,7 @@
             
             // Pequeno delay para mostrar a seleção antes de redirecionar
             setTimeout(() => {
-                const baseUrl = 'https://valorecapital.com.br/de/app-rec03-nike-tenis/';
+                const baseUrl = 'https://valorecapital.com.br/app-rec03-nike-tenis/';
                 const finalUrl = buildUrlWithUtm(baseUrl, gender);
                 window.location.href = finalUrl;
             }, 300);
@@ -481,7 +481,7 @@
             const baseCount = 120;
             const variation = Math.floor(Math.random() * 15) + 1;
             const currentCount = baseCount + variation;
-            countElement.textContent = `${currentCount} Personen antworten gerade!`;
+            countElement.textContent = `${currentCount} pessoas respondendo agora!`;
         }
         
         // Atualiza contador a cada 3-7 segundos
